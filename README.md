@@ -66,6 +66,34 @@ Anjuna · Full Monsoon Dudhsagar · Last Shack Baga (Legendary lock).
 
 Grades derive from name + stack, so the same builder always mints the same card.
 
+## Typography
+
+Every text style in the site **and** on the card resolves to one of five tokens.
+Nothing is left on a browser default.
+
+| Token | Webfont | Used for |
+| --- | --- | --- |
+| `--f-official` | Archivo Black | Masthead + card-back wordmark |
+| `--f-display` | Unbounded | Card type, section headings, buttons |
+| `--f-ui` | Bricolage Grotesque | Body copy, leads, step text |
+| `--f-mono` | Martian Mono | Labels, data, ticker, footer |
+| `--f-deva` | Baloo Bhai 2 | गोवा |
+
+Two rules worth keeping:
+
+- **Archivo Black is a single-weight family.** It is always set at `font-weight:400`,
+  both in CSS and in the canvas exporter (`FO` in `_canvas.js`). Asking for 700 or 900
+  makes the browser synthesise fake-bold, which desynchronises the exported PNG from
+  the on-screen card.
+- **The masthead is a two-line flex stack** (`HACKER` / `HOUSE गोवा`) that wraps
+  naturally. It must never be given `white-space:nowrap` or a width greater than 100%.
+  That combination is exactly what used to clip the wordmark off the right edge on
+  phones, and what absolutely-positioned गोवा over the middle of the word.
+
+The WOFF files in `fonts/` are offline fallbacks used only when Google Fonts is
+unreachable. Each one matches the *category* of the webfont it stands in for, so
+`official.woff` is a heavy sans — never a serif. See `fonts/NOTICE.txt`.
+
 ## Local dev
 
 ```bash

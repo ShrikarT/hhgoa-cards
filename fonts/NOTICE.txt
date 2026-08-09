@@ -1,0 +1,10 @@
+Offline fallback font subsets
+
+These compact WOFF files are used only when the preferred webfonts cannot load.
+
+Fallback sources:
+- Nimbus Roman, Nimbus Mono PS, Nimbus Sans: URW Base35, GPL font exception.
+- DejaVu Sans Bold: DejaVu Fonts License.
+- Droid Sans Devanagari: Apache License 2.0.
+
+Only project glyph ranges are included. Keep this notice with redistributions.

@@ -9,27 +9,6 @@ PNG export, and public card links that unfurl as full-bleed images on X.
 Everything renders client-side with Canvas 2D — no framework, no bundler, no build step.
 The serverless functions exist only for publishing shareable card links.
 
-## Deploy
-
-1. Import this repo at [vercel.com/new](https://vercel.com/new)
-2. Framework Preset **Other** — no build command, no install command, no output directory
-3. Deploy. The card generator is live immediately.
-
-### Optional: public links + X image previews
-
-Add these under **Settings → Environment Variables**, then redeploy once.
-
-| Variable | Purpose |
-| --- | --- |
-| `R2_ACCOUNT_ID` | Cloudflare R2 account id |
-| `R2_ACCESS_KEY_ID` | R2 access key |
-| `R2_SECRET_ACCESS_KEY` | R2 secret access key |
-| `R2_BUCKET` | Bucket name, e.g. `hhgoa-cards` |
-| `PUBLIC_BASE` | Optional. Your final domain, e.g. `https://hhgoa-cards.vercel.app` |
-
-Without them the site still grades, flips, and exports cards. Only **COPY PUBLIC CARD
-LINK**, `/c/<id>` pages, hosted certs, and X unfurls need R2.
-
 ## Routes
 
 | Route | What it does |
